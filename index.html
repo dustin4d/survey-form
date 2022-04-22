@@ -2,129 +2,153 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" 
+          content="IE=edge"
+    >
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0"
+    >
     <title>Basic Survey Form</title>
 </head>
-<body>
-   <h1 id="title"></h1> 
-   <p id="description"></p>
-   <form id="survey-form">
-       <!-- LABELS/FORMS -->
-       <label id="name-label"
-              for="name">
-              Name 
-       </label>
-       <input id="name"
-              type="text"
-              placeholder="Name" 
-       />
+<div class="container">
+    <header class="header">
+      <h1 id="title">Basic Survey Form</h1>
+      <p id="description">Thanks for helping me improve.</p>
+    </header>
+    
+    <form id="survey-form">
+      <div class="form-group">
+        <label id="name-label"
+               for="name"
+               > Name
+        </label>
+        <input id="name"
+               class="form-control"
+               name="name"
+               type="text"
+               placeholder="Name"
+               required
+        />
+      </div>
         
-        <!-- Input requires what is effectively a valid email containing a string@string.string -->
-        <label  id="email-label" 
-                for="email">
-                Email
+      <div class="form-group">
+        <label id="email-label"
+               for="email"
+               > Email
         </label>
         <input id="email"
-               type="text"
+               class="form-control"
+               name="email"
+               type="email"
                placeholder="Email"
                required
-               pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/               "
-        />
-        <label id="number-label"
-               for="number" >
-               Number
-        </label>
-        <input type="number"
-               required
-               max="99"
-               min="01"
-               placeholder="Number"
-        />
-
-        <select id="dropdown">
-            <option value="Option 1">Option 1</option>
-            <option value="Option 2">Option 2</option>
-            <option value="Option 3">Option 3</option>
-        </select>
-
-        <!-- OPTION MENU -->
-        <input id="option1" 
-               name="name"
-               type="radio"
-               value="1"
-        />
-        <label id="option1-label"
-               for="option1"
-        >      Option 1
+        /> 
         
-        <input id="option2"
-               name="name"
+        <div class="form-group">
+          <label id="number-label"
+                 for="number"
+                 > Number
+          </label>
+          <input id="number"
+                 class="form-control"
+                 name="number"
+                 type="number"
+                 min="00"
+                 max="99"
+                 placeholder="Number"
+                 />
+        </div>
+        
+        <div class="form-group">
+          <select id="dropdown"
+                  name="role"
+                  class="form-control"
+                  required
+          >
+            <option disabled 
+                    selected 
+                    value
+                    >Select current role
+            </option>
+          <option value="student">Student</option>
+          <option value="job">Full Time Job</option>
+          <option value="learner">Full Time Learner</option>
+          <option value="preferNo">Prefer not to say</option>
+          <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-class"
+             <p>Would you recommend blah aisoih?</p>
+      <label>
+          <input name="user-recommend"
+            value="definitely"
+            type="radio"
+            class="input-radio"
+            checked
+            > Definitely
+      </label>
+      <label>
+        <input name="user-recommend"
+               value="maybe"
                type="radio"
-               value="2"
-        />
-        <label id="option2-label"
-               for="option2"
-        >      Option 2
-        </label>
-
-                <input id="option3"
-               name="name"
+               class="input-radio"
+               checked
+               > Maybe
+      </label>
+      
+      <label>
+        <input name="user-recommend"
+               value="no"
                type="radio"
-               value="3"
-        />
-        <label id="option3-label"
-               for="option3"
-        >      Option 3
-        </label>
-
-
-<!-- CHECKBOXES --> 
-        <input id="checkbox1"
+               class="input-radio"
+               checked
+               > Probably not
+      </label>
+      
+      <div class="form-group">
+        <label>
+        <input name="preference"
                type="checkbox"
-               name="checkbox1"
-               value="1"
-        >
-        <label id="checkbox1-label"
-               for="checkbox1"
-        > Checkbox 1
+               value="front-end"
+               class="input-checkbox"
+               > Front End
         </label>
-
-        <input id="checkbox2"
-               type="checkbox"
-               name="checkbox2"
-               value="2"
-        > 
-        <label id="checkbox2-label"
-               for="checkbox2"
-        > Checkbox 2
+        
+        <label>
+          <input name="preference"
+                 type="checkbox"
+                 value="back-end"
+                 class="input-checkbox"
+                 > Back End
         </label>
-
-        <input id="checkbox3"
-               type="checkbox"
-               name="checkbox3"
-               value="3"
-        > 
-        <label id="checkbox3-label"
-               for="checkbox3"
-        > Checkbox 3
+        
+        <label>
+          <input name="preference"
+                 type="checkbox"
+                 value="Open Source Software"
+                 class="input-checkbox"
+                 > Open Source Software
         </label>
+        
+        <label>
+          <p>Any additional concerns?</p>
+          <textarea id="feedback"
+                    placeholder="Enter text here.">
+          </textarea>
+                    
+          </div>
+        
+        <div class="form-group">
+             <button id="submit"
+                     type="submit"
+                     > Submit 
+          </button>
+        </div>
+        
+          
+        
+    
+  </div>
 
-
-        <label id="textarea-label"
-               for="feedback"
-        > Give us some feedback! 
-        </label>
-        <textarea id="feedback"
-                  name="feedback"
-                  rows="4"
-                  cols="50"
-                  placeholder="Leave a message here..."
-        > 
-
-        </textarea>
-
-
-   </form>
-</body>
 </html>
