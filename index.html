@@ -9,15 +9,25 @@
           content="width=device-width, initial-scale=1.0"
     >
     <title>Basic Survey Form</title>
+    <link href="src/css/normalize.css" rel="stylesheet">
+    <link href="src/css/styles.css" rel="stylesheet">
 </head>
+
+<body>
+
+<!-- Main container class -->
 <div class="container">
     <header class="header">
       <h1 id="title">Basic Survey Form</h1>
-      <p id="description">Thanks for helping me improve.</p>
+      <p class="description">Thanks for helping me improve.</p>
     </header>
+
     
-    <form id="survey-form">
-      <div class="form-group">
+<!-- PRIMARY FORM -->
+   <form id="survey-form">
+
+<!-- Name field -->
+    <div class="form-group">
         <label id="name-label"
                for="name"
                > Name
@@ -29,64 +39,70 @@
                placeholder="Name"
                required
         />
-      </div>
-        
-      <div class="form-group">
-        <label id="email-label"
-               for="email"
-               > Email
         </label>
-        <input id="email"
-               class="form-control"
-               name="email"
-               type="email"
-               placeholder="Email"
-               required
-        /> 
+    </div>
+
+<!-- Email field -->
+    <div class="form-group">
+      <label id="email-label"
+             for="email"
+             > Email
+      </label>
+      <input id="email"
+             class="form-control"
+             name="email"
+             type="email"
+             placeholder="Email"
+             required
+      /> 
+    </div>
         
-        <div class="form-group">
-          <label id="number-label"
-                 for="number"
-                 > Number
-          </label>
-          <input id="number"
-                 class="form-control"
-                 name="number"
-                 type="number"
-                 min="00"
-                 max="99"
-                 placeholder="Number"
-                 />
-        </div>
-        
-        <div class="form-group">
-          <select id="dropdown"
-                  name="role"
-                  class="form-control"
-                  required
-          >
-            <option disabled 
-                    selected 
-                    value
-                    >Select current role
-            </option>
-          <option value="student">Student</option>
-          <option value="job">Full Time Job</option>
-          <option value="learner">Full Time Learner</option>
-          <option value="preferNo">Prefer not to say</option>
-          <option value="other">Other</option>
-          </select>
-        </div>
-        
-        <div class="form-class"
-             <p>Would you recommend blah aisoih?</p>
+<!-- Number field -->
+    <div class="form-group">
+      <label id="number-label"
+             for="number"
+             > Number
+      </label>
+      <input id="number"
+             class="form-control"
+             name="number"
+             type="number"
+             min="00"
+             max="99"
+             placeholder="Number"
+        />
+    </div>
+
+<!-- Dropdown menu -->
+    <div class="form-group">
+      <select id="dropdown"
+              name="role"
+              class="form-control"
+              required
+        >
+        <option disabled 
+                selected 
+                value
+                > Select current role
+        </option>
+        <option value="student">Student</option>
+        <option value="job">Full Time Job</option>
+        <option value="learner">Full Time Learner</option>
+        <option value="preferNo">Prefer not to say</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+       
+<!-- Recommend buttons -->
+    <div class="form-class">
+      <p>Would you recommend freeCodeCamp or The Odin Project, or both?</p>
       <label>
           <input name="user-recommend"
-            value="definitely"
-            type="radio"
-            class="input-radio"
-            checked
-            > Definitely
+                 value="definitely"
+                 type="radio"
+                 class="input-radio"
+                 checked
+                 > Definitely
       </label>
       <label>
         <input name="user-recommend"
@@ -106,49 +122,53 @@
                > Probably not
       </label>
       
-      <div class="form-group">
-        <label>
+<!-- Preference boxes -->
+    <div class="form-group">
+      <label>
         <input name="preference"
                type="checkbox"
                value="front-end"
                class="input-checkbox"
                > Front End
-        </label>
+      </label>
         
-        <label>
-          <input name="preference"
-                 type="checkbox"
-                 value="back-end"
-                 class="input-checkbox"
-                 > Back End
-        </label>
+      <label>
+        <input name="preference"
+               type="checkbox"
+               value="back-end"
+               class="input-checkbox"
+               > Back End
+      </label>
         
-        <label>
-          <input name="preference"
-                 type="checkbox"
-                 value="Open Source Software"
-                 class="input-checkbox"
-                 > Open Source Software
-        </label>
-        
-        <label>
-          <p>Any additional concerns?</p>
-          <textarea id="feedback"
-                    placeholder="Enter text here.">
-          </textarea>
-                    
-          </div>
-        
-        <div class="form-group">
-             <button id="submit"
-                     type="submit"
-                     > Submit 
-          </button>
-        </div>
-        
-          
-        
-    
-  </div>
+      <label>
+        <input name="preference"
+               type="checkbox"
+               value="Open Source Software"
+               class="input-checkbox"
+               > Open Source Software
+      </label>
+    </div>
 
+<!-- Feedback field -->
+    <div class="form-group">
+      <label>
+        <p>Any additional concerns?</p>
+      </label>
+      <textarea id="feedback"
+                placeholder="Enter text here.">
+      </textarea>
+                    
+    </div>
+
+    <div class="form-group">
+      <button id="submit"
+              type="submit"
+              > Submit 
+      </button>
+    </div>
+
+    </form>
+</div>
+
+</body>
 </html>
